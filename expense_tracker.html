@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="expense_tracker.css">
+</head>
+<body>
+    
+    <main> 
+
+        <header id="header">
+            <h1 id="title">Expense Tracker</h1>
+            <p>Track your spending and manage your expenses</p>
+        </header>
+
+        <div id="summary">
+            <section id="total_spent_summary">
+               <h3>Total spent</h3>
+               <strong>₹0</strong>
+            </section>
+
+            <section id="this_month_summary">
+               <h3>This month</h3>
+               <strong>₹0</strong>
+            </section>
+
+            <section id="transactions_summary">
+               <h3>Transactions</h3>
+               <strong>0</strong>
+            </section>
+        </div> 
+
+      <div id="main_form">
+      <form id="expense_tracker_form">
+        
+        <label for ="expense_name">Expense Name:</label>
+        <input type="text" id="expense_name" name="expense_name" required>
+        <label for="expense_amount">Amount:</label>
+        <input type="number" id="expense_amount" name="expense_amount" step="0.01" required>
+        <label for="expense_category">Category:</label>
+        <select id="expense_category" name="expense_category" class="form_control" required>
+            <option value="" disabled selected>Where is the money?</option>
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="shopping">Shopping</option>
+            <option value="bills">Bills</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="health">Health</option>
+            <option value="education">Education</option>
+            <option value="others">Others</option>
+        </select>
+        <label for="expense_date">Date:</label>
+        <input type="date" id="expense_date" name="expense_date" class="form_control" required>
+        <button type="submit" id="add_expense">Add Expense</button>
+
+      </form> 
+      </div>
+
+    <section id="filter_expense_section">
+      <label for="filter_category">Filter using category:</label>
+      <select id="filter_category" name="filter_category" class="form_control" >
+            <option value="all_category" selected>All Categories</option>
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="shopping">Shopping</option>
+            <option value="bills">Bills</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="health">Health</option>
+            <option value="education">Education</option>
+            <option value="others">Others</option>
+        </select>
+
+        <label for="filter_month">Filter using month:</label>
+        <select id="filter_month" name="filter_month" class="form_control" >
+    <option value="all_months" selected>All months</option>
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+</select>
+</section>
+
+<section id="expense_section">
+<div>
+
+    <h2>My expenses</h2>
+    <div id="empty_state">
+        <p>No expenses yet
+
+Start tracking your spending by adding your first expense.</p>
+    </div>
+    <div id="expense_list">
+    </div>
+
+</div>
+</section>
+<script src="expense_tracker.js"></script>
+    </main>
+</body>
+</html>
